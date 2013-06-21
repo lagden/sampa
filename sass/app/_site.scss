@@ -83,4 +83,19 @@
         size: cover;
     }
     color: $white;
+    .mapaCanvas{
+        width: 100%;
+        height: 400px;
+        color: $black;
+        h3{
+            margin: 0 0 10px 0;
+            padding: 0;
+            @include attr-size('font-size', 14);
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            @include attr-size('font-size', 11);
+        }
+    }
 }

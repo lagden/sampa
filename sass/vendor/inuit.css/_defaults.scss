@@ -30,7 +30,7 @@ $debug-mode:        false!default;
  * Do you want all elements to adopt `box-sizing:border-box;` as per
  * paulirish.com/2012/box-sizing-border-box-ftw ?
  */
-$global-border-box: true!default;
+$global-border-box: false!default;
 
 
 
@@ -194,7 +194,7 @@ $use-media:         false!default;
 $use-marginalia:    false!default;
 $use-island:        false!default;
 $use-block-list:    false!default;
-$use-matrix:        true!default;
+$use-matrix:        false!default;
 $use-split:         false!default;
 $use-this-or-this:  false!default;
 $use-link-complex:  false!default;

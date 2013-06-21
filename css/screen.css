@@ -253,12 +253,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 /*------------------------------------*\ $RESET
 \*------------------------------------*/
 /** A more considered reset; more of a restart... As per: csswizardry.com/2011/10/reset-restarted */
-/**
-* Let’s make the box model all nice, shall we...?
-*/
-/* line 16, ../sass/vendor/inuit.css/generic/_reset.scss */
-*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
-
 /** The usual... */
 /* line 30, ../sass/vendor/inuit.css/generic/_reset.scss */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, table, th, td, caption, hr { margin: 0; padding: 0; }
@@ -290,16 +284,16 @@ label, input, textarea, button, select, option { cursor: pointer; }
 \*------------------------------------*/
 /** Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php Extend the clearfix class with Sass to avoid the `.cf` class appearing over and over in your markup. */
 /* line 10, ../sass/vendor/inuit.css/generic/_clearfix.scss */
-.cf:after, .nav:after, .matrix:after, .multi-list:after { content: ""; display: table; clear: both; }
+.cf:after, .nav:after { content: ""; display: table; clear: both; }
 
 /*------------------------------------*\ $SHARED
 \*------------------------------------*/
 /** Where `margin-bottom` is concerned, this value will be the same as the base line-height. This allows us to keep a consistent vertical rhythm. As per: csswizardry.com/2012/06/single-direction-margin-declarations */
 /** Base elements */
 /* line 24, ../sass/vendor/inuit.css/generic/_shared.scss */
-h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dl, blockquote, p, address, table, fieldset, figure, pre, .form-fields > li, .media, .island, .islet { margin-bottom: 24px; margin-bottom: 1.5rem; }
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dl, blockquote, p, address, table, fieldset, figure, pre, .media, .island, .islet { margin-bottom: 24px; margin-bottom: 1.5rem; }
 /* line 28, ../sass/vendor/inuit.css/generic/_shared.scss */
-.islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet ul, .islet ol, .islet dl, .islet blockquote, .islet p, .islet address, .islet table, .islet fieldset, .islet figure, .islet pre, .islet .form-fields > li, .islet .media, .islet .island, .islet .islet { margin-bottom: 12px; margin-bottom: 0.75rem; }
+.islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet ul, .islet ol, .islet dl, .islet blockquote, .islet p, .islet address, .islet table, .islet fieldset, .islet figure, .islet pre, .islet .media, .islet .island, .islet .islet { margin-bottom: 12px; margin-bottom: 0.75rem; }
 
 /** Doubled up `margin-bottom` helper class. */
 /* line 38, ../sass/vendor/inuit.css/generic/_shared.scss */
@@ -319,155 +313,6 @@ ul, ol, dd { margin-left: 48px; margin-left: 3rem; }
 /* line 4, ../sass/vendor/inuit.css/base/_main.scss */
 html { font: 1em/1.5 sans-serif; overflow-y: scroll; min-height: 100%; }
 
-/*------------------------------------*\ $HEADINGS
-\*------------------------------------*/
-/** As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css  When we define a heading we also define a corresponding class to go with it. This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded heading hierarchy. */
-/* line 11, ../sass/vendor/inuit.css/base/_headings.scss */
-h1, .alpha { font-size: 36px; font-size: 2.25rem; line-height: 1.33333; }
-
-/* line 14, ../sass/vendor/inuit.css/base/_headings.scss */
-h2, .beta { font-size: 30px; font-size: 1.875rem; line-height: 1.6; }
-
-/* line 17, ../sass/vendor/inuit.css/base/_headings.scss */
-h3, .gamma { font-size: 24px; font-size: 1.5rem; line-height: 1; }
-
-/* line 20, ../sass/vendor/inuit.css/base/_headings.scss */
-h4, .delta { font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
-
-/* line 23, ../sass/vendor/inuit.css/base/_headings.scss */
-h5, .epsilon { font-size: 16px; font-size: 1rem; line-height: 1.5; }
-
-/* line 26, ../sass/vendor/inuit.css/base/_headings.scss */
-h6, .zeta { font-size: 14px; font-size: 0.875rem; line-height: 1.71429; }
-
-/** Heading groups and generic any-heading class. To target any heading of any level simply apply a class of `.hN`, e.g.:  <hgroup> <h1 class=hN>inuit.css</h1> <h2 class=hN>Best. Framework. Ever!</h2> </hgroup>  */
-/* line 43, ../sass/vendor/inuit.css/base/_headings.scss */
-hgroup .hN { margin-bottom: 0; }
-
-/** A series of classes for setting massive type; for use in heroes, mastheads, promos, etc. */
-/* line 52, ../sass/vendor/inuit.css/base/_headings.scss */
-.giga { font-size: 96px; font-size: 6rem; line-height: 1; }
-
-/* line 55, ../sass/vendor/inuit.css/base/_headings.scss */
-.mega { font-size: 72px; font-size: 4.5rem; line-height: 1; }
-
-/* line 58, ../sass/vendor/inuit.css/base/_headings.scss */
-.kilo { font-size: 48px; font-size: 3rem; line-height: 1; }
-
-/*------------------------------------*\ $PARAGRAPHS
-\*------------------------------------*/
-/** The `.lede` class is used to make the introductory text (usually a paragraph) of a document slightly larger. */
-/* line 9, ../sass/vendor/inuit.css/base/_paragraphs.scss */
-.lede, .lead { font-size: 18px; font-size: 1.125rem; line-height: 1.33333; }
-
-/*------------------------------------*\ $SMALLPRINT
-\*------------------------------------*/
-/** A series of classes for setting tiny type; for use in smallprint etc. */
-/* line 8, ../sass/vendor/inuit.css/base/_smallprint.scss */
-.smallprint, .milli { font-size: 12px; font-size: 0.75rem; line-height: 2; }
-
-/* line 11, ../sass/vendor/inuit.css/base/_smallprint.scss */
-.micro { font-size: 10px; font-size: 0.625rem; line-height: 2.4; }
-
-/*------------------------------------*\ $QUOTES
-\*------------------------------------*/
-/** If English quotes are set in `_vars.scss`, define them here. */
-/** Big up @boblet: html5doctor.com/blockquote-q-cite */
-/** Inline quotes. */
-/* line 20, ../sass/vendor/inuit.css/base/_quotes.scss */
-q { quotes: "\2018" "\2019" "\201C" "\201D"; }
-/* line 23, ../sass/vendor/inuit.css/base/_quotes.scss */
-q:before { content: "\2018"; content: open-quote; }
-/* line 27, ../sass/vendor/inuit.css/base/_quotes.scss */
-q:after { content: "\2019"; content: close-quote; }
-/* line 32, ../sass/vendor/inuit.css/base/_quotes.scss */
-q q:before { content: "\201C"; content: open-quote; }
-/* line 36, ../sass/vendor/inuit.css/base/_quotes.scss */
-q q:after { content: "\201D"; content: close-quote; }
-
-/* line 42, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote { quotes: "\201C" "\201D"; }
-/* line 45, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote p:before { content: "\201C"; content: open-quote; }
-/* line 49, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote p:after { content: ""; content: no-close-quote; }
-/* line 53, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote p:last-of-type:after { content: "\201D"; content: close-quote; }
-/* line 58, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote q:before { content: "\2018"; content: open-quote; }
-/* line 62, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote q:after { content: "\2019"; content: close-quote; }
-
-/**  <blockquote> <p>Insanity: doing the same thing over and over again and expecting different results.</p> <b class=source>Albert Einstein</b> </blockquote>  */
-/* line 78, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote { /** .4em is roughly equal to the width of the opening “ that we wish to hang. */ text-indent: -0.41em; }
-/* line 84, ../sass/vendor/inuit.css/base/_quotes.scss */
-blockquote p:last-of-type { margin-bottom: 0; }
-
-/* line 89, ../sass/vendor/inuit.css/base/_quotes.scss */
-.source { display: block; text-indent: 0; }
-/* line 93, ../sass/vendor/inuit.css/base/_quotes.scss */
-.source:before { content: "\2014"; }
-
-/*------------------------------------*\ $CODE
-\*------------------------------------*/
-/** Use an explicit font stack to ensure browsers render correct `line-height`. */
-/* line 7, ../sass/vendor/inuit.css/base/_code.scss */
-pre { overflow: auto; }
-
-/* line 10, ../sass/vendor/inuit.css/base/_code.scss */
-pre mark { background: none; border-bottom: 1px solid; color: inherit; }
-
-/** Add comments to your code examples, e.g.:  <code>&lt;/div&gt;<span class=code-comment>&lt;!-- /wrapper --&gt;</span></code>  */
-/* line 23, ../sass/vendor/inuit.css/base/_code.scss */
-.code-comment { /** Override this setting in your theme stylesheet */ opacity: 0.75; filter: alpha(opacity=75); }
-
-/** You can add line numbers to your code examples but be warned, it requires some pretty funky looking markup, e.g.:  <ol class=line-numbers> <li><code>.nav{</code></li> <li><code>    list-style:none;</code></li> <li><code>    margin-left:0;</code></li> <li><code>}</code></li> <li><code>    .nav > li,</code></li> <li><code>        .nav > li > a{</code></li> <li><code>            display:inline-block;</code></li> <li><code>           *display:inline-block;</code></li> <li><code>            zoom:1;</code></li> <li><code>        }</code></li> </ol>  1. Make the list look like code. 2. Give the list flush numbers with a leading zero. 3. Make sure lines of code don’t wrap. 4. Give the code form by forcing the `code` to honour white-space. */
-/* line 54, ../sass/vendor/inuit.css/base/_code.scss */
-.line-numbers { font-family: monospace, serif; /* [1] */ list-style: decimal-leading-zero inside; /* [2] */ white-space: nowrap; /* [3] */ overflow: auto; /* [3] */ margin-left: 0; }
-
-/* line 61, ../sass/vendor/inuit.css/base/_code.scss */
-.line-numbers code { white-space: pre; /* [4] */ }
-
-/*------------------------------------*\ $IMAGES
-\*------------------------------------*/
-/** Demo: jsfiddle.net/inuitcss/yMtur */
-/** Fluid images. */
-/* line 10, ../sass/vendor/inuit.css/base/_images.scss */
-img { max-width: 100%; }
-
-/** Non-fluid images if you specify `width` and/or `height` attributes. */
-/* line 19, ../sass/vendor/inuit.css/base/_images.scss */
-img[width], img[height] { max-width: none; }
-
-/** Rounded images. */
-/* line 27, ../sass/vendor/inuit.css/base/_images.scss */
-.img--round { border-radius: 4px; }
-
-/** Image placement variations. */
-/* line 33, ../sass/vendor/inuit.css/base/_images.scss */
-.img--right { float: right; margin-bottom: 24px; margin-left: 24px; }
-
-/* line 38, ../sass/vendor/inuit.css/base/_images.scss */
-.img--left { float: left; margin-right: 24px; margin-bottom: 24px; }
-
-/* line 43, ../sass/vendor/inuit.css/base/_images.scss */
-.img--center { display: block; margin-right: auto; margin-bottom: 24px; margin-left: auto; }
-
-/** Keep your images on your baseline.  Please note, these will not work too nicely with fluid images and will distort when resized below a certain width. Use with caution. */
-/* line 57, ../sass/vendor/inuit.css/base/_images.scss */
-.img--short { height: 120px; }
-
-/* line 60, ../sass/vendor/inuit.css/base/_images.scss */
-.img--medium { height: 240px; }
-
-/* line 63, ../sass/vendor/inuit.css/base/_images.scss */
-.img--tall { height: 360px; }
-
-/** Images in `figure` elements. */
-/* line 71, ../sass/vendor/inuit.css/base/_images.scss */
-figure > img { display: block; }
-
 /*------------------------------------*\ $LISTS
 \*------------------------------------*/
 /** Remove vertical spacing from nested lists. */
@@ -478,181 +323,6 @@ li > ul, li > ol { margin-bottom: 0; }
 /*ul*/
 /* line 17, ../sass/vendor/inuit.css/base/_lists.scss */
 .numbered-list { list-style-type: decimal; }
-
-/*------------------------------------*\ $TABLES
-\*------------------------------------*/
-/** We have a lot at our disposal for making very complex table constructs, e.g.:  <table class="table--bordered  table--striped  table--data"> <colgroup> <col class=t10> <col class=t10> <col class=t10> <col> </colgroup> <thead> <tr> <th colspan=3>Foo</th> <th>Bar</th> </tr> <tr> <th>Lorem</th> <th>Ipsum</th> <th class=numerical>Dolor</th> <th>Sit</th> </tr> </thead> <tbody> <tr> <th rowspan=3>Sit</th> <td>Dolor</td> <td class=numerical>03.788</td> <td>Lorem</td> </tr> <tr> <td>Dolor</td> <td class=numerical>32.210</td> <td>Lorem</td> </tr> <tr> <td>Dolor</td> <td class=numerical>47.797</td> <td>Lorem</td> </tr> <tr> <th rowspan=2>Sit</th> <td>Dolor</td> <td class=numerical>09.640</td> <td>Lorem</td> </tr> <tr> <td>Dolor</td> <td class=numerical>12.117</td> <td>Lorem</td> </tr> </tbody> </table>  */
-/* line 58, ../sass/vendor/inuit.css/base/_tables.scss */
-table { width: 100%; }
-
-/* line 62, ../sass/vendor/inuit.css/base/_tables.scss */
-th, td { padding: 6px; text-align: left; }
-@media screen and (min-width: 480px) { /* line 62, ../sass/vendor/inuit.css/base/_tables.scss */
-  th, td { padding: 12px; } }
-
-/** Cell alignments */
-/* line 74, ../sass/vendor/inuit.css/base/_tables.scss */
-[colspan] { text-align: center; }
-
-/* line 77, ../sass/vendor/inuit.css/base/_tables.scss */
-[colspan="1"] { text-align: left; }
-
-/* line 80, ../sass/vendor/inuit.css/base/_tables.scss */
-[rowspan] { vertical-align: middle; }
-
-/* line 83, ../sass/vendor/inuit.css/base/_tables.scss */
-[rowspan="1"] { vertical-align: top; }
-
-/* line 86, ../sass/vendor/inuit.css/base/_tables.scss */
-.numerical { text-align: right; }
-
-/** In the HTML above we see several `col` elements with classes whose numbers represent a percentage width for that column. We leave one column free of a class so that column can soak up the effects of any accidental breakage in the table. */
-/* line 96, ../sass/vendor/inuit.css/base/_tables.scss */
-.t5 { width: 5%; }
-
-/* line 97, ../sass/vendor/inuit.css/base/_tables.scss */
-.t10 { width: 10%; }
-
-/* line 98, ../sass/vendor/inuit.css/base/_tables.scss */
-.t12 { width: 12.5%; }
-
-/* 1/8 */
-/* line 99, ../sass/vendor/inuit.css/base/_tables.scss */
-.t15 { width: 15%; }
-
-/* line 100, ../sass/vendor/inuit.css/base/_tables.scss */
-.t20 { width: 20%; }
-
-/* line 101, ../sass/vendor/inuit.css/base/_tables.scss */
-.t25 { width: 25%; }
-
-/* 1/4 */
-/* line 102, ../sass/vendor/inuit.css/base/_tables.scss */
-.t30 { width: 30%; }
-
-/* line 103, ../sass/vendor/inuit.css/base/_tables.scss */
-.t33 { width: 33.333%; }
-
-/* 1/3 */
-/* line 104, ../sass/vendor/inuit.css/base/_tables.scss */
-.t35 { width: 35%; }
-
-/* line 105, ../sass/vendor/inuit.css/base/_tables.scss */
-.t37 { width: 37.5%; }
-
-/* 3/8 */
-/* line 106, ../sass/vendor/inuit.css/base/_tables.scss */
-.t40 { width: 40%; }
-
-/* line 107, ../sass/vendor/inuit.css/base/_tables.scss */
-.t45 { width: 45%; }
-
-/* line 108, ../sass/vendor/inuit.css/base/_tables.scss */
-.t50 { width: 50%; }
-
-/* 1/2 */
-/* line 109, ../sass/vendor/inuit.css/base/_tables.scss */
-.t55 { width: 55%; }
-
-/* line 110, ../sass/vendor/inuit.css/base/_tables.scss */
-.t60 { width: 60%; }
-
-/* line 111, ../sass/vendor/inuit.css/base/_tables.scss */
-.t62 { width: 62.5%; }
-
-/* 5/8 */
-/* line 112, ../sass/vendor/inuit.css/base/_tables.scss */
-.t65 { width: 65%; }
-
-/* line 113, ../sass/vendor/inuit.css/base/_tables.scss */
-.t66 { width: 66.666%; }
-
-/* 2/3 */
-/* line 114, ../sass/vendor/inuit.css/base/_tables.scss */
-.t70 { width: 70%; }
-
-/* line 115, ../sass/vendor/inuit.css/base/_tables.scss */
-.t75 { width: 75%; }
-
-/* 3/4*/
-/* line 116, ../sass/vendor/inuit.css/base/_tables.scss */
-.t80 { width: 80%; }
-
-/* line 117, ../sass/vendor/inuit.css/base/_tables.scss */
-.t85 { width: 85%; }
-
-/* line 118, ../sass/vendor/inuit.css/base/_tables.scss */
-.t87 { width: 87.5%; }
-
-/* 7/8 */
-/* line 119, ../sass/vendor/inuit.css/base/_tables.scss */
-.t90 { width: 90%; }
-
-/* line 120, ../sass/vendor/inuit.css/base/_tables.scss */
-.t95 { width: 95%; }
-
-/** Bordered tables */
-/* line 129, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--bordered th, .table--bordered td { border: 1px solid #cccccc; }
-/* line 132, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--bordered th:empty, .table--bordered td:empty { border: none; }
-/* line 137, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--bordered thead tr:last-child th { border-bottom-width: 2px; }
-/* line 141, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--bordered tbody tr th:last-of-type { border-right-width: 2px; }
-
-/** Striped tables */
-/* line 152, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--striped tbody tr:nth-of-type(odd) { background-color: #ffc; /* Override this color in your theme stylesheet */ }
-
-/** Data table */
-/* line 161, ../sass/vendor/inuit.css/base/_tables.scss */
-.table--data { font: 12px/1.5 sans-serif; }
-
-/*------------------------------------*\ $FORMS
-\*------------------------------------*/
-/**  Demo: jsfiddle.net/inuitcss/MhHHU  */
-/* line 9, ../sass/vendor/inuit.css/base/_forms.scss */
-fieldset { padding: 24px; }
-
-/** Text inputs  Instead of a `[type]` selector for each kind of form input, we just use a class to target any/every one, e.g.: <input type=text class=text-input> <input type=email class=text-input> <input type=password class=text-input>  */
-/* line 25, ../sass/vendor/inuit.css/base/_forms.scss */
-.text-input, textarea { /** Style these via your theme stylesheet. */ }
-
-/** Group sets of form fields in a list, e.g.:  <ul class=form-fields> <li> <label /> <input /> </li> <li> <label /> <select /> </li> <li> <label /> <input /> </li> </ul>  */
-/* line 51, ../sass/vendor/inuit.css/base/_forms.scss */
-.form-fields { list-style: none; margin: 0; }
-
-/* line 58, ../sass/vendor/inuit.css/base/_forms.scss */
-.form-fields > li:last-child { margin-bottom: 0; }
-
-/** Labels  Define a `.label` class as well as a `label` element. This means we can apply label-like styling to meta-labels for groups of options where a `label` element is not suitable, e.g.:  <li> <span class=label>Select an option below:</span> <ul class="multi-list  four-cols"> <li> <input /> <label /> </li> <li> <input /> <label /> </li> <li> <input /> <label /> </li> <li> <input /> <label /> </li> </ul> </li>  */
-/* line 90, ../sass/vendor/inuit.css/base/_forms.scss */
-label, .label { display: block; }
-
-/** Extra help text in `label`s, e.g.:  <label>Card number <small class=additional>No spaces</small></label>  */
-/* line 99, ../sass/vendor/inuit.css/base/_forms.scss */
-.additional { display: block; font-weight: normal; }
-
-/* Groups of checkboxes and radios, e.g.:  <li> <ul class=check-list> <li> <input /> <label /> </li> <li> <input /> <label /> </li> </ul> </li>  */
-/* line 120, ../sass/vendor/inuit.css/base/_forms.scss */
-.check-list { list-style: none; margin: 0; }
-
-/* Labels in check-lists */
-/* line 129, ../sass/vendor/inuit.css/base/_forms.scss */
-.check-label, .check-list label, .check-list .label { display: inline-block; }
-
-/** Spoken forms are for forms that read like spoken word, e.g.:  <li class=spoken-form> Hello, my <label for=spoken-name>name</label> is <input type=text class=text-input id=spoken-name>. My home <label for=country>country</label> is <select id=country> <option>UK</option> <option>US</option> <option>Other</option> </select> </li>  */
-/* line 149, ../sass/vendor/inuit.css/base/_forms.scss */
-.spoken-form label { display: inline-block; font: inherit; }
-
-/** Extra help text displayed after a field when that field is in focus, e.g.:  <label for=email>Email:</label> <input type=email class=text-input id=email> <small class=extra-help>.edu emails only</small>  We leave the help text in the document flow and merely set it to `visibility:hidden;`. This means that it won’t interfere with anything once it reappears.  */
-/*small*/
-/* line 167, ../sass/vendor/inuit.css/base/_forms.scss */
-.extra-help { display: inline-block; visibility: hidden; }
-
-/* line 172, ../sass/vendor/inuit.css/base/_forms.scss */
-.text-input:active + .extra-help, .text-input:focus + .extra-help { visibility: visible; }
 
 /** Objects and abstractions */
 /*------------------------------------*\ $NAV
@@ -694,52 +364,6 @@ label, .label { display: block; }
 .nav--keywords > li:after { content: "\002C" "\00A0"; }
 /* line 149, ../sass/vendor/inuit.css/objects/_nav.scss */
 .nav--keywords > li:last-child:after { display: none; }
-
-/*------------------------------------*\ $BLOCK-LIST
-\*------------------------------------*/
-/** Create big blocky lists of content, e.g.:  <ul class=block-list> <li>Foo</li> <li>Bar</li> <li>Baz</li> <li><a href=# class=block-list__link>Foo Bar Baz</a></li> </ul>  Extend this object in your theme stylesheet.  Demo: jsfiddle.net/inuitcss/hR57q  */
-/* line 24, ../sass/vendor/inuit.css/objects/_block-list.scss */
-.block-list, .matrix, .block-list > li, .matrix > li { border: 0 solid #cccccc; }
-
-/* line 28, ../sass/vendor/inuit.css/objects/_block-list.scss */
-.block-list, .matrix { list-style: none; margin-left: 0; border-top-width: 1px; }
-/* line 33, ../sass/vendor/inuit.css/objects/_block-list.scss */
-.block-list > li, .matrix > li { border-bottom-width: 1px; padding: 12px; }
-
-/* line 38, ../sass/vendor/inuit.css/objects/_block-list.scss */
-.block-list__link, .matrix__link { display: block; padding: 12px; margin: -12px; }
-
-/*------------------------------------*\ $MATRIX
-\*------------------------------------*/
-/** Create a grid of items out of a single list, e.g.:  <ul class="matrix  three-cols"> <li class=all-cols>Lorem</li> <li>Ipsum <a href=#>dolor</a></li> <li><a href=# class=matrix__link>Sit</a></li> <li>Amet</li> <li class=all-cols>Consectetuer</li> </ul>  Extend this object in your theme stylesheet.  Demo: jsfiddle.net/inuitcss/Y2zrU  */
-/* line 22, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.matrix { border-left-width: 1px; }
-/* line 27, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.matrix > li { float: left; border-right-width: 1px; }
-
-/** The `.multi-list` object is a lot like the `.matrix` object only without the blocky borders and padding.  <ul class="multi-list  four-cols"> <li>Lorem</li> <li>Ipsum</li> <li>Dolor</li> <li>Sit</li> </ul>  Demo: jsfiddle.net/inuitcss/Y2zrU  */
-/* line 54, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.multi-list { list-style: none; margin-left: 0; }
-
-/* line 59, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.multi-list > li { float: left; }
-
-/** Apply these classes alongside the `.matrix` or `.multi-list` classes on lists to determine how wide their columns are. */
-/* line 68, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.two-cols > li { width: 50%; }
-
-/* line 71, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.three-cols > li { width: 33.333%; }
-
-/* line 74, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.four-cols > li { width: 25%; }
-
-/* line 77, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.five-cols > li { width: 20%; }
-
-/** Unfortunately we have to qualify this selector in order to bring its specificity above the `.[number]-cols > li` selectors above. */
-/* line 85, ../sass/vendor/inuit.css/objects/_matrix.scss */
-.matrix > .all-cols, .multi-list > .all-cols { width: 100%; }
 
 /*------------------------------------*\ $ARROWS
 \*------------------------------------*/
@@ -1111,3 +735,9 @@ html { font-family: false, "Helvetica Neue", Helvetica, Arial, sans-serif; backg
 
 /* line 76, ../sass/app/_site.scss */
 .local { padding: 100px 0; background-image: url('../images/bg-local.jpg?1371794337'); background-repeat: no-repeat; background-position: 50% 50%; background-color: transparent; background-size: cover; color: white; }
+/* line 86, ../sass/app/_site.scss */
+.local .mapaCanvas { width: 100%; height: 400px; color: black; }
+/* line 90, ../sass/app/_site.scss */
+.local .mapaCanvas h3 { margin: 0 0 10px 0; padding: 0; font-size: 14px; font-size: 0.875rem; }
+/* line 95, ../sass/app/_site.scss */
+.local .mapaCanvas p { margin: 0; padding: 0; font-size: 11px; font-size: 0.6875rem; }
