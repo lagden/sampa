@@ -1,0 +1,24 @@
+// // Ico
+// $ico-layout: smart;
+// $ico-sprites-dimensions: true;
+// @import "sprites/ico/*.png";
+// @include all-ico-sprites(true);
+
+// // Helpers
+// %complemento{
+//     @include inline-block;
+//     @include ie7-restore-right-whitespace;
+//     vertical-align: middle;
+//     padding: 0;
+// }
+
+// [class^="ico-"],
+// [class*=" ico-"],
+// [class^="bg-"],
+// [class*=" bg-"],
+// [class^="opts-"],
+// [class*=" opts-"],
+// [class^="geral-"],
+// [class*=" geral-"]{
+//     @extend %complemento;
+// }

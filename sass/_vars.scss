@@ -1,0 +1,28 @@
+// Grays
+// -------------------------
+$black:                 #000000 !default;
+$grayDarker:            #232323 !default;
+$grayDark:              #444444 !default;
+$gray:                  #6c6c6c !default;
+$grayLight:             #999999 !default;
+$grayLighter:           #f4f4f4 !default;
+$white:                 #ffffff !default;
+
+// Custom colors
+// -------------------------
+$redDark: #4b1216 !default;
+$red: #98232c !default;
+$redLight: #d21322 !default;
+
+// Links
+// -------------------------
+$linkColor:             #08c !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+// Typography
+// -------------------------
+$base-font-size: 16px;
+
+// Others
+// -------------------------
+$space: 100px;

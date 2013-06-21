@@ -1,0 +1,31 @@
+.sass-cache
+node_modules
+bower_components
+js/dist/*
+js/output*.js
+css/main.css
+
+# Layouts do Gustavo
+layouts
+
+# Cpanel
+cgi-bin
+error_log
+
+# OS Crap
+.DS_Store
+thumbs.db
+.*.swp
+*.tmproj
+*.mwb
+*.mwb.bak
+*.sublime-*
+
+# SCM files
+.arch-params
+.bzr
+_darcs
+.hg
+.monotone
+.svn
+.project

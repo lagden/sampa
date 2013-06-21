@@ -1,0 +1,86 @@
+// Home
+// -------------------------
+.home{
+    padding: $space 0;
+    background:{
+        image: image_url('bg-home.jpg');
+        repeat: no-repeat;
+        position: 50% 50%;
+        color: transparent;
+        size: cover;
+    }
+    color: $white;
+    .nav{
+        li{
+            @include attr-size('font-size', 15);
+            @include attr-size('margin-right', 10);
+            @include inline-block;
+            vertical-align: middle;
+            text-transform: uppercase;
+            &:last-child{
+                margin-right: 0;
+            };
+            a{
+                @include link-colors($white, $redLight, $white, $white, $redLight);
+                text-decoration: none;
+                display: block;
+            }
+        }
+    }
+}
+
+// Sobre o evento
+// -------------------------
+.sobre-o-evento{
+    background-color: $red;
+    color: $white;
+    padding-top: $space;
+    .title{
+        color: $white;
+    }
+    .cols-2{
+        @include column-gap($space);
+        @include attr-size('font-size', 19);
+        margin-bottom: $space;
+    }
+    .medias{
+        background-color: $redDark;
+        padding: $space 0;
+    }
+}
+
+// Palestrante
+// -------------------------
+.palestrantes{
+    background-color: $white;
+    color: $black;
+    padding: $space 0;
+    .title{
+        color: $redLight;
+    }
+}
+
+// Programação
+// -------------------------
+.programacao{
+    background-color: $grayLighter;
+    color: $black;
+    padding: $space 0;
+    .title{
+        color: $redLight;
+    }
+}
+
+// Local
+// -------------------------
+.local{
+    padding: $space 0;
+    background:{
+        image: image_url('bg-local.jpg');
+        repeat: no-repeat;
+        position: 50% 50%;
+        color: transparent;
+        size: cover;
+    }
+    color: $white;
+}
